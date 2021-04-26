@@ -6,12 +6,12 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FrontendEndConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+public class ApiGatewayEndpoint implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Autowired
     EndpointConfiguration configuration;
 
     public void customize(ConfigurableServletWebServerFactory factory){
-        factory.setPort(configuration.getFrontend().getPort());
+        factory.setPort(configuration.getApiGateway().getPort());
     }
 }

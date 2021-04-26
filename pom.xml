@@ -8,6 +8,7 @@
 		<module>bookstore-storage</module>
 		<module>bookstore-backend</module>
 		<module>bookstore-shared</module>
+		<module>bookstore-api-gateway</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -63,6 +64,14 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>fluent-hc</artifactId>
 		</dependency>
 	</dependencies>
 

@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 public class BackendConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Autowired
-    SharedAutoConfiguration configuration;
+    EndpointConfiguration configuration;
 
     public void customize(ConfigurableServletWebServerFactory factory){
-        factory.setPort(configuration.getFrontendServerPort());
+        factory.setPort(configuration.getBackend().getPort());
     }
 }

@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>bookstore</artifactId>
+        <artifactId>bookstore-storage</artifactId>
         <groupId>com.training</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>bookstore-minio</module>
-        <module>bookstore-files</module>
-        <module>bookstore-storage-client</module>
-    </modules>
-    <artifactId>bookstore-storage</artifactId>
+    <artifactId>bookstore-files</artifactId>
 
 
 </project>
