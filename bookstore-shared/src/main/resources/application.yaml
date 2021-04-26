@@ -15,7 +15,7 @@ api:
       method: "GET"
       url: localhost
       port: 8000
-      location: http://${api.endpoints[0].url}:${api.endpoints[0].port}
+      location: http://${api.endpoints[1].url}:${api.endpoints[1].port}
       username: ""
       password: ""
 
@@ -24,7 +24,7 @@ api:
       method: "GET"
       url: localhost
       port: 7000
-      location: http://${api.endpoints[1].url}:${api.endpoints[1].port}
+      location: http://${api.endpoints[2].url}:${api.endpoints[2].port}
       username: ""
       password: ""
 
@@ -33,7 +33,7 @@ api:
       method: "GET"
       url: localhost
       port: 8500
-      location: http://${api.endpoints[2].url}:${api.endpoints[2].port}
+      location: http://${api.endpoints[3].url}:${api.endpoints[3].port}
       username: "test1234"
       password: "test1234"
 
@@ -42,6 +42,6 @@ api:
       method: "GET"
       url: localhost
       port: 5000
-      location: http://${api.endpoints[3].url}:${api.endpoints[3].port}
+      location: http://${api.endpoints[4].url}:${api.endpoints[4].port}
       username: "test1234"
       password: "test1234"
