@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./storage/minio:/data
+    environment:
+      MINIO_ACCESS_KEY: test1234
+      MINIO_SECRET_KEY: test1234
+    command: server --address 0.0.0.0:9000 /data
+
+  db:
+    image: cockroachdb/cockroach
+    restart: always
+    ports:
+      - "26257:26257"
+      - "6000:8080"
+    command: start-single-node --insecure
+    volumes:
+      - "./cockroach-data/crdb:/cockroach/cockroach-data"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5000:8080
+
+  solr:
+    image: solr
+    ports:
+     - "7000:8983"
+    volumes:
+      - ./solr:/var/solr
+    command:
+      - solr-precreate
+      - gettingstarted
