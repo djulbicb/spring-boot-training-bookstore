@@ -5,6 +5,7 @@ import com.training.bookstore.client.StorageMinioClient;
 import io.minio.errors.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,16 +25,17 @@ FrontendController {
     StorageMinioClient minioClient;
 
     @GetMapping("")
-    public String getIndex() throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
-        minioClient.write("bojan", "sss", "This is content");
-        minioClient.read("bojan", "sss");
+    public String getIndex(Model model) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
+//        minioClient.write("bojan", "sss", "This is content");
+//        minioClient.read("bojan", "sss");
 
-        String write = filesClient.write("file", "www this is content");
-        System.out.println(write);
-
-
-
-        String file = filesClient.read("file");
+//        String write = filesClient.write("file", "www this is content");
+//        System.out.println(write);
+//
+//
+//
+//        String file = filesClient.read("file");
+        model.addAttribute("bojan", "Model bojan");
         return "index";
     }
 

@@ -21,7 +21,6 @@ public class EndpointConfiguration implements WebMvcConfigurer {
     private final String MINIO = "minio";
     private final String API_GATEWAY = "api-gateway";
 
-
     @Autowired
     public EndpointConfiguration(ApiGatewayProperties endpoints) {
         this.endpointMap = convertEndpointsToMap(endpoints);

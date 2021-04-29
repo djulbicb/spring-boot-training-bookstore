@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.2"
 services:
   minio:
     image: minio/minio
@@ -16,7 +16,7 @@ services:
     restart: always
     ports:
       - "26257:26257"
-      - "6000:8080"
+      - "6050:8080"
     command: start-single-node --insecure
     volumes:
       - "./cockroach-data/crdb:/cockroach/cockroach-data"
@@ -25,7 +25,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 5000:8080
+      - 6070:8080
 
   solr:
     image: solr

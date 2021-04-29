@@ -17,5 +17,11 @@
         <module>boostore-storage-client</module>
     </modules>
 
+<dependencies>
+    <dependency>
+        <groupId>io.minio</groupId>
+        <artifactId>minio</artifactId>
+    </dependency>
+</dependencies>
 
 </project>

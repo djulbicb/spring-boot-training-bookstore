@@ -12,6 +12,12 @@
     <artifactId>boostore-storage-client</artifactId>
     <dependencies>
 
+        <dependency>
+            <groupId>com.training</groupId>
+            <artifactId>bookstore-shared</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 
