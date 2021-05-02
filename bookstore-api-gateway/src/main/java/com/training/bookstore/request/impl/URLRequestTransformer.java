@@ -1,6 +1,5 @@
 package com.training.bookstore.request.impl;
-import com.training.bookstore.ApiGatewayEndpoint;
-import com.training.bookstore.Endpoint;
+import com.training.bookstore.api.Endpoint;
 import com.training.bookstore.EndpointConfiguration;
 import com.training.bookstore.request.ProxyRequestTransformer;
 import org.apache.http.client.methods.RequestBuilder;
@@ -36,7 +35,7 @@ public class URLRequestTransformer extends ProxyRequestTransformer {
     private String getServiceUrl(String requestURI, HttpServletRequest httpServletRequest) {
         Optional<Endpoint> found = Optional.empty();
         for (Endpoint e : endpointConfiguration.getEndpoints()) {
-            if (requestURI.matches(e.getPath()) && e.getMethod() == RequestMethod.valueOf(httpServletRequest.getMethod())) {
+            if (requestURI.matches(e.getApi()) && e.getMethod() == RequestMethod.valueOf(httpServletRequest.getMethod())) {
                 found = Optional.of(e);
                 break;
             }

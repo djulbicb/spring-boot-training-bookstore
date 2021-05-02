@@ -1,0 +1,26 @@
+[
+  {
+    "api" : "/api/gateway/",
+    "name" : "api-gateway",
+    "method" : "GET",
+    "url" : "localhost",
+    "port": 9000,
+    "location" : "http://${url}:${port}"
+  },
+  {
+    "api" : "/api/frontend/",
+    "name" : "frontend",
+    "method" : "GET",
+    "url" : "localhost",
+    "port": 9050,
+    "location" : "http://${url}:${port}"
+  },
+  {
+    "api" : "/api/backend/",
+    "name" : "backend",
+    "method" : "GET",
+    "url" : "localhost",
+    "port": 9040,
+    "location" : "http://${url}:${port}/${api}"
+  }
+]

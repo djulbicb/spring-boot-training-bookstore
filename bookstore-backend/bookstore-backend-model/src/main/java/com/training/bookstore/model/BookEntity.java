@@ -1,11 +1,7 @@
 package com.training.bookstore.model;
 
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Random;
 
 @Entity
@@ -14,17 +10,17 @@ public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private long id;
 
     private String title;
 
     private String writer;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

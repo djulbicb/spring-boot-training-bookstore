@@ -5,5 +5,6 @@
     <body>
         <strong>Hello from index page ${bojan}</strong>
         <ex:Hello message = "This is custom tag" />
+        ${books}
     </body>
 </html>

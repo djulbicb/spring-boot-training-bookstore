@@ -1,6 +1,6 @@
 package com.training.bookstore.controller;
 
-import com.training.bookstore.Endpoint;
+import com.training.bookstore.api.Endpoint;
 import com.training.bookstore.EndpointConfiguration;
 import io.minio.*;
 import io.minio.errors.*;

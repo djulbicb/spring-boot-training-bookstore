@@ -26,10 +26,31 @@
 		<spring.boot.version>2.4.5</spring.boot.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.github.djulbicb</groupId>
+				<artifactId>DataLibrary</artifactId>
+				<version>v10.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.pocketknife</groupId>
+				<artifactId>pocket-knife</artifactId>
+				<version>1.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-text</artifactId>
+				<version>1.9</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -46,6 +67,11 @@
 				<version>${spring.boot.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>42.2.20</version>
+			</dependency>
 
 
 

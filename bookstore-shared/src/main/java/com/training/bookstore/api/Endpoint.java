@@ -1,13 +1,16 @@
-package com.training.bookstore;
+package com.training.bookstore.api;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.apache.commons.text.StringSubstitutor;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Endpoint {
+
     private String name;
-    private String path;
+    private String api;
+    private String url;
     private RequestMethod method;
     private String location;
     private int port;
@@ -37,12 +40,12 @@ public class Endpoint {
         this.location = location;
     }
 
-    public String getPath() {
-        return path;
+    public String getApi() {
+        return api;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setApi(String api) {
+        this.api = api;
     }
 
     public RequestMethod getMethod() {
@@ -54,7 +57,17 @@ public class Endpoint {
     }
 
     public String getLocation() {
-        return location;
+
+        Map<String, Object> values = new HashMap<>();
+        values.put("url", url);
+        values.put("port", port);
+        values.put("api", api);
+
+        StringSubstitutor sub = new StringSubstitutor(values);
+        sub.setEnableSubstitutionInVariables(true);
+        String resultLocation = sub.replace(location);
+
+        return resultLocation;
     }
 
     public void setLocation(String location) {
@@ -80,7 +93,7 @@ public class Endpoint {
     @Override
     public String toString() {
         return "Endpoint{" +
-                "path='" + path + '\'' +
+                "path='" + api + '\'' +
                 ", method=" + method +
                 ", location='" + location + '\'' +
                 ", username='" + username + '\'' +
