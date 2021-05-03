@@ -66,7 +66,7 @@ public class ApiEndpointConsumer extends JsonToClassResourceReader<List<Endpoint
             }
         }
 
-
+        endpoints.remove(apiGateway);
         this.endpoints = endpoints;
     }
 

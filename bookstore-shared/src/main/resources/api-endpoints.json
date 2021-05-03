@@ -1,22 +1,25 @@
 [
   {
-    "api" : "/api/gateway/",
+    "api" : "api/gateway/",
+    "regex" : "[\\/]*api\\/.*",
     "name" : "api-gateway",
     "method" : "GET",
     "url" : "localhost",
-    "port": 9000,
-    "location" : "http://${url}:${port}"
+    "port": 9020,
+    "location" : "http://${url}:${port}/${api}"
   },
   {
-    "api" : "/api/frontend/",
+    "api" : "api/frontend/",
+    "regex" : "[\\/]*api\\/frontend\\/.*",
     "name" : "frontend",
     "method" : "GET",
     "url" : "localhost",
     "port": 9050,
-    "location" : "http://${url}:${port}"
+    "location" : "http://${url}:${port}/${api}"
   },
   {
-    "api" : "/api/backend/",
+    "api" : "api/backend/",
+    "regex" : "[\\/]*api\\/backend\\/.*",
     "name" : "backend",
     "method" : "GET",
     "url" : "localhost",

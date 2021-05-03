@@ -3,6 +3,7 @@ import com.training.bookstore.api.ApiEndpointConsumer;
 import com.training.bookstore.api.Endpoint;
 import com.training.bookstore.request.ProxyRequestTransformer;
 import org.apache.http.client.methods.RequestBuilder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
 
+@Component
 public class URLRequestTransformer extends ProxyRequestTransformer {
 
     private final ApiEndpointConsumer endpointConfiguration;
@@ -35,12 +37,12 @@ public class URLRequestTransformer extends ProxyRequestTransformer {
     private String getServiceUrl(String requestURI, HttpServletRequest httpServletRequest) {
         Optional<Endpoint> found = Optional.empty();
         for (Endpoint e : endpointConfiguration.getEndpoints()) {
-            if (requestURI.matches(e.getApi()) && e.getMethod() == RequestMethod.valueOf(httpServletRequest.getMethod())) {
+            if (requestURI.matches(e.getRegex()) && e.getMethod() == RequestMethod.valueOf(httpServletRequest.getMethod())) {
                 found = Optional.of(e);
                 break;
             }
         }
         Endpoint endpoint = found.orElseThrow(() -> new RuntimeException("runtime"));
-        return endpoint.getLocation() + requestURI;
+        return endpoint.getHost() + requestURI;
     }
 }

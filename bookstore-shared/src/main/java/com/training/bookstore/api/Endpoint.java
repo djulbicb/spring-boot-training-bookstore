@@ -10,6 +10,7 @@ public class Endpoint {
 
     private String name;
     private String api;
+    private String regex;
     private String url;
     private RequestMethod method;
     private String location;
@@ -18,6 +19,22 @@ public class Endpoint {
     private String password;
 
     Endpoint() {
+    }
+
+    public String getRegex() {
+        return regex;
+    }
+
+    public void setRegex(String regex) {
+        this.regex = regex;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getName() {
@@ -56,8 +73,8 @@ public class Endpoint {
         this.method = method;
     }
 
-    public String getLocation() {
 
+    public String getLocation() {
         Map<String, Object> values = new HashMap<>();
         values.put("url", url);
         values.put("port", port);
@@ -66,6 +83,18 @@ public class Endpoint {
         StringSubstitutor sub = new StringSubstitutor(values);
         sub.setEnableSubstitutionInVariables(true);
         String resultLocation = sub.replace(location);
+
+        return resultLocation;
+    }
+
+    public String getHost () {
+        Map<String, Object> values = new HashMap<>();
+        values.put("url", url);
+        values.put("port", port);
+
+        StringSubstitutor sub = new StringSubstitutor(values);
+        sub.setEnableSubstitutionInVariables(true);
+        String resultLocation = sub.replace("http://${url}:${port}");
 
         return resultLocation;
     }

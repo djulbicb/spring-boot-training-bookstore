@@ -1,4 +1,4 @@
-package com.training.bookstore;
+package com.training.bookstore.configuration;
 
 import com.training.bookstore.api.ApiEndpointConsumer;
 import org.springframework.beans.factory.annotation.Autowired;

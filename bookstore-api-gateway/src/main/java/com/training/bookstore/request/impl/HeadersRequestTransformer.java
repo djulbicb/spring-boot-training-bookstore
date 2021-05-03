@@ -2,6 +2,7 @@ package com.training.bookstore.request.impl;
 
 import com.training.bookstore.request.ProxyRequestTransformer;
 import org.apache.http.client.methods.RequestBuilder;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.net.URISyntaxException;
 import java.util.Enumeration;
 import java.util.Random;
 
+@Component
 public class HeadersRequestTransformer extends ProxyRequestTransformer {
 
     @Override
