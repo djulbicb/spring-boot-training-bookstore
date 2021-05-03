@@ -7,13 +7,13 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AppBackendConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+public class FrontendEndConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Autowired
     ApiEndpointConsumer apiEndpointConsumer;
 
     public void customize(ConfigurableServletWebServerFactory factory){
-        factory.setPort(apiEndpointConsumer.getBackend().getPort());
+        factory.setPort(apiEndpointConsumer.getFrontend().getPort());
     }
 
 }

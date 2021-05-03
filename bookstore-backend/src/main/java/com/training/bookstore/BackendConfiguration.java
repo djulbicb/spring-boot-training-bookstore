@@ -1,5 +1,6 @@
 package com.training.bookstore;
 
+import com.training.bookstore.api.ApiEndpointConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class BackendConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Autowired
-    EndpointConfiguration configuration;
+    ApiEndpointConsumer configuration;
 
     public void customize(ConfigurableServletWebServerFactory factory){
         factory.setPort(configuration.getBackend().getPort());

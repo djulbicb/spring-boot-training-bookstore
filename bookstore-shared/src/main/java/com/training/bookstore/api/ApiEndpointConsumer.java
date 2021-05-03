@@ -13,6 +13,25 @@ public class ApiEndpointConsumer extends JsonToClassResourceReader<List<Endpoint
 
     private Endpoint backend;
     private Endpoint frontend;
+    private Endpoint minio;
+    private Endpoint files;
+    private Endpoint apiGateway;
+
+    public List<Endpoint> getEndpoints() {
+        return endpoints;
+    }
+
+    public Endpoint getApiGateway() {
+        return apiGateway;
+    }
+
+    public Endpoint getMinio() {
+        return minio;
+    }
+
+    public Endpoint getFiles() {
+        return files;
+    }
 
     public Endpoint getBackend() {
         return backend;
@@ -34,6 +53,15 @@ public class ApiEndpointConsumer extends JsonToClassResourceReader<List<Endpoint
                     break;
                 case "frontend" :
                     frontend = endpoint;
+                    break;
+                case "minio" :
+                    minio = endpoint;
+                    break;
+                case "files" :
+                    files = endpoint;
+                    break;
+                case "api-gateway" :
+                    apiGateway = endpoint;
                     break;
             }
         }

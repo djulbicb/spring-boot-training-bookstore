@@ -32,4 +32,11 @@ public class BookService {
         BookEntity save = bookRepository.save(BookConvertor.dtoToEntity(book));
         return BookConvertor.entityToDto(save);
     }
+
+    public void deleteById(long bookId) {
+        bookRepository.deleteById(bookId);
+    }
+    public Book findById(long bookId) {
+        return BookConvertor.entityToDto(bookRepository.findById(bookId).get());
+    }
 }

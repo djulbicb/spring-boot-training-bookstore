@@ -1,15 +1,38 @@
 package com.training.bookstore.model;
 
 
+import data.DataLibrary;
+
+import javax.validation.constraints.NotEmpty;
 import java.util.Random;
 
 public class Book {
 
     private long id;
 
+    @NotEmpty
     private String title;
-
+    @NotEmpty
     private String writer;
+    private String description;
+    private String image;
+
+    public static Book empty(DataLibrary data) {
+        Book book = new Book();
+        book.setWriter(data.getName() + " " + data.getSurname());
+        book.setTitle(data.getSentenceBound(4));
+        book.setDescription(data.getParagraph());
+        book.setImage(data.getImgUrl(400,300));
+        return book;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public long getId() {
         return id;
@@ -33,6 +56,14 @@ public class Book {
 
     public void setWriter(String writer) {
         this.writer = writer;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public static Book random () {

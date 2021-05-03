@@ -10,6 +10,8 @@ public class BookConvertor {
         book.setId(entity.getId());
         book.setTitle(entity.getTitle());
         book.setWriter(entity.getWriter());
+        book.setDescription(entity.getDescription());
+        book.setImage(entity.getImage());
         return book;
     }
 
@@ -18,6 +20,8 @@ public class BookConvertor {
         entity.setId(book.getId());
         entity.setTitle(book.getTitle());
         entity.setWriter(book.getWriter());
+        entity.setDescription(book.getDescription());
+        entity.setImage(book.getImage());
         return entity;
     }
 }

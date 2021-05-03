@@ -2,6 +2,7 @@ package com.training.bookstore.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Random;
 
 @Entity
@@ -15,6 +16,11 @@ public class BookEntity {
     private String title;
 
     private String writer;
+
+    @Column(columnDefinition="text", length=10000)
+    private String description;
+
+    private String image;
 
     public long getId() {
         return id;
@@ -40,20 +46,40 @@ public class BookEntity {
         this.writer = writer;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public static BookEntity random () {
         Random rnd = new Random();
         BookEntity b = new BookEntity();
         b.setTitle(rnd.nextInt(100) + "");
         b.setWriter(rnd.nextInt(100) + "");
+        b.setDescription(rnd.nextInt(100) + "");
+        b.setImage(rnd.nextInt(100) + "");
         return b;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id='" + id + '\'' +
+        return "BookEntity{" +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", writer='" + writer + '\'' +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

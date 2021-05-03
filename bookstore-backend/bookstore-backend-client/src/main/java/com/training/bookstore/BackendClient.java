@@ -14,26 +14,34 @@ import java.util.List;
 @Component
 public class BackendClient {
 
-    private final ApiEndpointConsumer endpointConsumer;
+    private final String apiEndpoint;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public BackendClient(ApiEndpointConsumer endpointConsumer) {
-        this.endpointConsumer = endpointConsumer;
+    public BackendClient(ApiEndpointConsumer endpointConsumer, RestTemplate restTemplate) {
+        apiEndpoint = endpointConsumer.getBackend().getLocation();
+        this.restTemplate = restTemplate;
     }
 
-    public void save(Book book) {
-
+    public Book save(Book book) {
+        return restTemplate.postForObject(apiEndpoint + "book/create", book, Book.class);
     }
 
     public List<Book> findAll() {
-        RestTemplate restTemplate = new RestTemplate();
-
         ResponseEntity<List<Book>> responseEntity =
-                restTemplate.exchange(endpointConsumer.getBackend().getLocation() + "book",
+                restTemplate.exchange(apiEndpoint + "book",
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {
                         });
 
        return responseEntity.getBody();
 
+    }
+
+    public Book findBookById(long bookId) {
+        return restTemplate.getForObject(apiEndpoint + "book/" + bookId, Book.class);
+    }
+
+    public void deleteBookById(Book book) {
+        restTemplate.postForObject(apiEndpoint + "book/delete/" + book.getId(), null, Boolean.class);
     }
 }

@@ -1,6 +1,6 @@
 package com.training.bookstore.client;
 
-import com.training.bookstore.EndpointConfiguration;
+import com.training.bookstore.api.ApiEndpointConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class StorageFilesClient {
 
     @Autowired
-    EndpointConfiguration configuration;
+    ApiEndpointConsumer configuration;
 
     public String write (String filePath, String content) {
         RestTemplate template = new RestTemplate();

@@ -1,7 +1,7 @@
 package com.training.bookstore.controller;
 
+import com.training.bookstore.api.ApiEndpointConsumer;
 import com.training.bookstore.api.Endpoint;
-import com.training.bookstore.EndpointConfiguration;
 import io.minio.*;
 import io.minio.errors.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.security.NoSuchAlgorithmException;
 public class MinioController {
 
     @Autowired
-    EndpointConfiguration configuration;
+    ApiEndpointConsumer configuration;
 
     @RequestMapping("/write")
     public String write(@RequestBody MinioModel model) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {

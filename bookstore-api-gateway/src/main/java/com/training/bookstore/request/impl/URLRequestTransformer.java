@@ -1,6 +1,6 @@
 package com.training.bookstore.request.impl;
+import com.training.bookstore.api.ApiEndpointConsumer;
 import com.training.bookstore.api.Endpoint;
-import com.training.bookstore.EndpointConfiguration;
 import com.training.bookstore.request.ProxyRequestTransformer;
 import org.apache.http.client.methods.RequestBuilder;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,9 +12,9 @@ import java.util.Optional;
 
 public class URLRequestTransformer extends ProxyRequestTransformer {
 
-    private final EndpointConfiguration endpointConfiguration;
+    private final ApiEndpointConsumer endpointConfiguration;
 
-    public URLRequestTransformer(EndpointConfiguration endpointConfiguration) {
+    public URLRequestTransformer(ApiEndpointConsumer endpointConfiguration) {
         this.endpointConfiguration = endpointConfiguration;
     }
 
