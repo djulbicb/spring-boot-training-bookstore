@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+/docker/cockroach-data/*
+/docker/solr/data/gettingstarted/conf/lang/*
+/docker/storage/minio/*

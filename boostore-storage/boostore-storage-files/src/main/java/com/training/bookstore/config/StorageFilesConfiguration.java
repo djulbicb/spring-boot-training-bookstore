@@ -1,11 +1,11 @@
-package com.training.bookstore;
+package com.training.bookstore.config;
 
 import com.training.bookstore.api.ApiEndpointConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 public class StorageFilesConfiguration implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
@@ -13,7 +13,16 @@ public class StorageFilesConfiguration implements WebServerFactoryCustomizer<Con
     @Autowired
     ApiEndpointConsumer configuration;
 
+    @Value("${storage.root}")
+    private String rootPath;
+
+//    @Bean
+//    public FilesPathResolver filesPathResolver () {
+//        return new FilesPathResolver();
+//    }
+
     public void customize(ConfigurableServletWebServerFactory factory){
+        System.out.println(rootPath);
         factory.setPort(configuration.getFiles().getPort());
     }
 }

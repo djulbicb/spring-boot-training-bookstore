@@ -7,14 +7,12 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+@EnableAutoConfiguration
 public class AppStorageFiles {
-
 
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(AppStorageFiles.class);
 		ConfigurableApplicationContext run = app.run(args);
 
 	}
-
 }
