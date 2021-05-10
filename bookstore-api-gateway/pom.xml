@@ -25,6 +25,16 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>fluent-hc</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
+
     </dependencies>
 
 

@@ -1,16 +1,14 @@
-package com.training.bookstore;
+package com.training.curator.watcher;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class AppApiGateway {
+public class WatcherCuratorApp {
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(AppApiGateway.class);
+		SpringApplication app = new SpringApplication(WatcherCuratorApp.class);
 		ConfigurableApplicationContext run = app.run(args);
 	}
 
