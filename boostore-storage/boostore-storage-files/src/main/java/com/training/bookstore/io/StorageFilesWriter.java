@@ -1,7 +1,5 @@
 package com.training.bookstore.io;
 
-import com.training.bookstore.model.ShopConfig;
-import com.training.bookstore.resources.Resource;
 import org.springframework.stereotype.Component;
 
 @Component

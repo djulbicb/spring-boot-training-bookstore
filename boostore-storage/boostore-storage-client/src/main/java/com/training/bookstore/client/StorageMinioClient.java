@@ -1,8 +1,6 @@
 package com.training.bookstore.client;
 
 import com.training.bookstore.api.ApiEndpointConsumer;
-import com.training.bookstore.model.ShopConfig;
-import com.training.bookstore.resources.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -12,13 +10,7 @@ public class StorageMinioClient {
     @Autowired
     ApiEndpointConsumer configuration;
 
-    public void write (ShopConfig config, Resource resource, String content) {
 
-    }
-
-    public void read (ShopConfig config, Resource resource) {
-
-    }
 
     public String write (String bucketName, String identifier, String content) {
         RestTemplate template = new RestTemplate();
