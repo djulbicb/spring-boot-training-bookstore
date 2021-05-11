@@ -10,7 +10,6 @@ public class AppFrontend {
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(AppFrontend.class);
 		ConfigurableApplicationContext run = app.run(args);
-
 	}
 
 }

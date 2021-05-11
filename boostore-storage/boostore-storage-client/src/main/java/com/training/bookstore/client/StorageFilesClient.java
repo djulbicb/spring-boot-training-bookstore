@@ -4,6 +4,7 @@ import com.training.bookstore.api.ApiEndpointConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Component
 public class StorageFilesClient {
@@ -13,11 +14,21 @@ public class StorageFilesClient {
 
     public String write (String filePath, String content) {
         RestTemplate template = new RestTemplate();
-        return template.postForObject(configuration.getFiles().getLocation() + "/api/files/write", content, String.class);
+
+        String url = configuration.getFiles().getLocation() + "write";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("filePath", filePath);
+
+        return template.postForObject(builder.toUriString(), content, String.class);
     }
 
     public String read (String filePath) {
         RestTemplate template = new RestTemplate();
-        return template.getForObject(configuration.getFiles().getLocation() + "/api/files/read", String.class);
+
+        String url = configuration.getFiles().getLocation() + "read";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                .queryParam("filePath", filePath);
+
+        return template.getForObject(builder.toUriString(), String.class);
     }
 }
