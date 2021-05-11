@@ -16,11 +16,6 @@ public class StorageFilesConfiguration implements WebServerFactoryCustomizer<Con
     @Value("${storage.root}")
     private String rootPath;
 
-//    @Bean
-//    public FilesPathResolver filesPathResolver () {
-//        return new FilesPathResolver();
-//    }
-
     public void customize(ConfigurableServletWebServerFactory factory){
         System.out.println(rootPath);
         factory.setPort(configuration.getFiles().getPort());

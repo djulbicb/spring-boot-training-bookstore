@@ -16,6 +16,8 @@ public class Book {
     private String writer;
     private String description;
     private String image;
+    private double price;
+    private double rating;
 
     public static Book empty(DataLibrary data) {
         Book book = new Book();
@@ -66,20 +68,42 @@ public class Book {
         this.description = description;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     public static Book random () {
         Random rnd = new Random();
         Book b = new Book();
         b.setTitle(rnd.nextInt(100) + "");
         b.setWriter(rnd.nextInt(100) + "");
+        b.setPrice(rnd.nextDouble() * 10);
+        b.setRating(rnd.nextDouble() * 70);
         return b;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", writer='" + writer + '\'' +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", price=" + price +
+                ", rating=" + rating +
                 '}';
     }
 }

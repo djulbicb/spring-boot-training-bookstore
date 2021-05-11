@@ -9,7 +9,4 @@ public class StorageFilesWriter {
     public String write (String filePath, String content) {
         return "StorageFilesWriter WRITE";
     }
-
-    public void writeShopResource(ShopConfig config, Resource resource) {
-    }
 }

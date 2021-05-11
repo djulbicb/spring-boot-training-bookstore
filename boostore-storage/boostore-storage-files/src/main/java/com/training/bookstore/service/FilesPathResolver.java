@@ -16,27 +16,8 @@ public class FilesPathResolver {
     private final String rootPath;
 
     @Autowired
-    public FilesPathResolver(
-            @Value("${storage.root}") String rootPath) {
+    public FilesPathResolver( @Value("${storage.root}") String rootPath) {
         this.rootPath = rootPath;
-        System.out.println(rootPath);
     }
 
-    public String getResourceGlobalPath(Resource resource) {
-        Path path = Paths.get(rootPath, resource.getType().toString().toLowerCase(), resource.getName(), resource.getVersion(),  resource.getPath());
-        File file = new File(path.toUri());
-        if (!file.getParentFile().exists()) {
-            file.mkdirs();
-        }
-        return path.toFile().getAbsolutePath();
-    }
-
-    public String getResourcePath(ShopConfig config, Resource resource) {
-        Path path = Paths.get(rootPath, resource.getType().toString().toLowerCase(), config.getCode(), resource.getName(), resource.getVersion(), resource.getPath());
-        File file = new File(path.toUri());
-        if (!file.getParentFile().exists()) {
-            file.mkdirs();
-        }
-        return path.toFile().getAbsolutePath();
-    }
 }
