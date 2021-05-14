@@ -9,7 +9,8 @@
 		<module>bookstore-shared</module>
 		<module>bookstore-api-gateway</module>
 		<module>boostore-storage</module>
-	</modules>
+        <module>testzone</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
