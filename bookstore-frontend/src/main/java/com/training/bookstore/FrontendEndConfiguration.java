@@ -15,5 +15,4 @@ public class FrontendEndConfiguration implements WebServerFactoryCustomizer<Conf
     public void customize(ConfigurableServletWebServerFactory factory){
         factory.setPort(apiEndpointConsumer.getFrontend().getPort());
     }
-
 }

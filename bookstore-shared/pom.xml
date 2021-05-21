@@ -30,9 +30,8 @@
             <artifactId>DataLibrary</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.pocketknife</groupId>
-            <artifactId>pocket-knife</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>com.github.djulbicb</groupId>
+            <artifactId>pocketknife</artifactId>
         </dependency>
     </dependencies>
 </project>

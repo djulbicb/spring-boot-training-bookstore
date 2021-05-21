@@ -1,0 +1,20 @@
+[
+  {
+    "lang" : "EN",
+    "theme" : "BLUE",
+    "code" : "enbl",
+    "domains" : [".*enbl\\..*"]
+  },
+  {
+    "lang" : "RS",
+    "theme" : "ORANGE",
+    "code" : "rsor",
+    "domains" : [".*rsor\\..*"]
+  },
+  {
+    "lang" : "RO",
+    "theme" : "GREEN",
+    "code" : "rogr",
+    "domains" : [".*rogr\\..*"]
+  }
+]

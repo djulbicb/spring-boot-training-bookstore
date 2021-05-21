@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="test" template="views/default/test.jsp">
+        <put-attribute name="title" value="Bojan" />
+    </definition>
+
+    <!-- Template Definition -->
+    <definition name="template-def" template="views/default/defaultLayout.jsp">
+        <put-attribute name="title" value="Bojan" />
+        <put-attribute name="header" value="/views/default/defaultHeader.jsp" />
+        <put-attribute name="menu" value="/views/default/defaultMenu.jsp" />
+        <put-attribute name="body" value="body" />
+        <put-attribute name="footer" value="/views/default/defaultFooter.jsp" />
+    </definition>
+
+
+
+    <definition name="REGEXP:([^/].*)" template="views/default/defaultLayout.jsp">
+        <put-attribute name="meta" value="/views/themes/default/meta.jsp"/>
+        <put-attribute name="header" value="/views/themes/default/head.jsp"/>
+        <put-attribute name="body" value="/views/themes/default/body.jsp"/>
+        <put-attribute name="footer" value="/views/themes/default/footer.jsp"/>
+    </definition>
+</tiles-definitions>

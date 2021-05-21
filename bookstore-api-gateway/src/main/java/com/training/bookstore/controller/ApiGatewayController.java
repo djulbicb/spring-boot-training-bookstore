@@ -1,6 +1,6 @@
 package com.training.bookstore.controller;
 
-import com.pocketknife.string.StringUtil;
+import com.djulb.string.StringUtil;
 import com.training.bookstore.request.ProxyRequestTransformer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpRequest;

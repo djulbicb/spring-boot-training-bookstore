@@ -75,29 +75,31 @@
 			<!--				<version>${spring.boot.version}</version>-->
 			<!--			</dependency>-->
 
+
+
 			<!--YOU NEED THIS TO USE JSP PAGES - START-->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-tomcat</artifactId>
 				<version>${spring.boot.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>4.0.1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency> <!-- JSTL -->
-				<groupId>javax.servlet</groupId>
-				<artifactId>jstl</artifactId>
-				<version>1.2</version>
-			</dependency>
-			<!-- To compile JSP files -->
-			<dependency>
-				<groupId>org.apache.tomcat</groupId>
-				<artifactId>tomcat-jasper</artifactId>
-				<version>9.0.1</version>
-			</dependency>
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>javax.servlet-api</artifactId>
+	<version>4.0.1</version>
+	<scope>provided</scope>
+</dependency>
+<dependency> <!-- JSTL -->
+	<groupId>javax.servlet</groupId>
+	<artifactId>jstl</artifactId>
+	<version>1.2</version>
+</dependency>
+<!-- To compile JSP files -->
+<dependency>
+	<groupId>org.apache.tomcat</groupId>
+	<artifactId>tomcat-jasper</artifactId>
+	<version>9.0.1</version>
+</dependency>
 			<!--YOU NEED THIS TO USE JSP PAGES - END-->
 
 			<!--IO-->
@@ -122,6 +124,12 @@
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>fluent-hc</artifactId>
 				<version>4.5.13</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-extras</artifactId>
+				<version>3.0.8</version>
 			</dependency>
 
 			<!--APACHE CURATOR-->
@@ -149,18 +157,30 @@
 				<artifactId>DataLibrary</artifactId>
 				<version>v10.0</version>
 			</dependency>
+
 			<dependency>
-				<groupId>com.pocketknife</groupId>
-				<artifactId>pocket-knife</artifactId>
-				<version>1.0-SNAPSHOT</version>
+				<groupId>com.github.djulbicb</groupId>
+				<artifactId>pocketknife</artifactId>
+				<version>v0.13</version>
 			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
+
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>

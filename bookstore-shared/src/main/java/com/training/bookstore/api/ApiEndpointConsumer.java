@@ -1,15 +1,15 @@
 package com.training.bookstore.api;
 
-import com.pocketknife.resource.JsonToClassResourceReader;
-import org.springframework.stereotype.Component;
 import com.google.gson.reflect.TypeToken;
-
+import org.springframework.stereotype.Component;
+import com.djulb.resource.JsonToClassResourceReader;
 import java.lang.reflect.Type;
 import java.util.List;
 
 @Component
 public class ApiEndpointConsumer extends JsonToClassResourceReader<List<Endpoint>> {
     private final List<Endpoint> endpoints;
+
 
     private Endpoint backend;
     private Endpoint frontend;
