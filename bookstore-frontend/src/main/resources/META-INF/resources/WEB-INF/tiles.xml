@@ -18,16 +18,17 @@
     </definition>
 
     <definition name="REGEXP:([^/.][^.]*)\.([^.]+)" template="views/default/defaultLayout.jsp">
-        <put-attribute name="title"  value="This definition has a message: {2}."/>
-        <put-attribute name="meta" value="/views/themes/{2}/meta.jsp"/>
-        <put-attribute name="header" value="/views/themes/{options[folder]}/head.jsp"/>
-        <put-attribute name="body" value="/views/themes/{2}/body.jsp"/>
-        <put-attribute name="footer" value="/views/themes/{2}/footer.jsp"/>
+        <put-attribute name="theme"  value="{2}"/>
+        <put-attribute name="meta" value="/views/themes/{options[theme]}/meta.jsp"/>
+        <put-attribute name="header" value="/views/themes/{options[theme]}/head.jsp"/>
+        <put-attribute name="body" value="/views/themes/{options[theme]}/body.jsp"/>
+        <put-attribute name="footer" value="/views/themes/{options[theme]}/footer.jsp"/>
 
-        <put-list-attribute name="folder" cascade="true">
+        <put-list-attribute name="theme" cascade="true">
             <add-attribute value="{2}"/>
             <add-attribute value="default"/>
         </put-list-attribute>
+
     </definition>
 
 </tiles-definitions>

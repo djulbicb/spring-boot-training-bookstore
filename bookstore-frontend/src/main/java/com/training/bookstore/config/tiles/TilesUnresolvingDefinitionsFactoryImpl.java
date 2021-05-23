@@ -1,9 +1,8 @@
-package com.training.bookstore.context.tiles;
+package com.training.bookstore.config.tiles;
 
 import org.apache.tiles.Attribute;
 import org.apache.tiles.Definition;
 import org.apache.tiles.ListAttribute;
-import org.apache.tiles.context.TilesRequestContextHolder;
 import org.apache.tiles.definition.UnresolvingLocaleDefinitionsFactory;
 import org.apache.tiles.request.Request;
 import org.springframework.stereotype.Component;

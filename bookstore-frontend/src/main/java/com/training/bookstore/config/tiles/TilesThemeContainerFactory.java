@@ -1,4 +1,4 @@
-package com.training.bookstore.context.tiles;
+package com.training.bookstore.config.tiles;
 
 import org.apache.tiles.TilesContainer;
 import org.apache.tiles.definition.UnresolvingLocaleDefinitionsFactory;
