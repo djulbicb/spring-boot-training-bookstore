@@ -1,1 +1,1 @@
-footer.jsp
+: DEFAULT footer :

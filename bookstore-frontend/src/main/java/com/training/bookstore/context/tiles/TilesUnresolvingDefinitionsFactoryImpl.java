@@ -11,10 +11,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class FinnUnresolvingLocaleDefinitionsFactoryImpl extends UnresolvingLocaleDefinitionsFactory {
+public class TilesUnresolvingDefinitionsFactoryImpl extends UnresolvingLocaleDefinitionsFactory {
     private static final String DEF_INJECTION = "definition-injection";
-
-    public FinnUnresolvingLocaleDefinitionsFactoryImpl() {}
 
     @Override
     public Definition getDefinition(String name, Request tilesContext) {

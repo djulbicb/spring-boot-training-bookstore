@@ -1,1 +1,1 @@
-blue body
+: BLUE body :

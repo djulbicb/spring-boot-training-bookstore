@@ -1,1 +1,1 @@
-default head.jsp
+: DEFAULT head :

@@ -12,11 +12,11 @@ import com.training.bookstore.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -47,8 +47,10 @@ FrontendController {
     HttpServletRequest request;
 
     @RequestMapping( value = { "/tiles"}, method = RequestMethod.GET)
-    public String tiles() {
-        return"test";
+    public ModelAndView tiles(SiteSpec siteSpec, Model model) {
+        model.addAttribute("siteSpec", siteSpec);
+
+        return new ModelAndView("main"); // main.blue
     }
 
     @RequestMapping( value = { "/apachetiles"}, method = RequestMethod.GET)

@@ -1,1 +1,1 @@
-default body
+: DEFAULT body :

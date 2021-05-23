@@ -17,15 +17,16 @@ import org.apache.tiles.request.render.Renderer;
 import org.springframework.stereotype.Component;
 
 @Component
-public final class FinnTilesContainerFactory extends BasicTilesContainerFactory {
+public final class TilesThemeContainerFactory extends BasicTilesContainerFactory {
+
     @Override
     protected <T> PatternDefinitionResolver<T> createPatternDefinitionResolver(Class<T> customizationKeyClass) {
-        PrefixedPatternDefinitionResolver<T> r = new PrefixedPatternDefinitionResolver<T>();
-        r.registerDefinitionPatternMatcherFactory(
-                "WILDCARD", new WildcardDefinitionPatternMatcherFactory());
-        r.registerDefinitionPatternMatcherFactory(
-                "REGEXP", new RegexpDefinitionPatternMatcherFactory());
-        return r;
+        DefinitionPatternMatcherFactory wildcardFactory = new WildcardDefinitionPatternMatcherFactory();
+        DefinitionPatternMatcherFactory regexpFactory = new RegexpDefinitionPatternMatcherFactory();
+        PrefixedPatternDefinitionResolver<T> resolver = new PrefixedPatternDefinitionResolver<T>();
+        resolver.registerDefinitionPatternMatcherFactory("WILDCARD", wildcardFactory);
+        resolver.registerDefinitionPatternMatcherFactory("REGEXP", regexpFactory);
+        return resolver;
     }
     @Override
     protected Renderer createTemplateAttributeRenderer(BasicRendererFactory rendererFactory, ApplicationContext applicationContext, TilesContainer container, AttributeEvaluatorFactory attributeEvaluatorFactory) {
@@ -34,7 +35,6 @@ public final class FinnTilesContainerFactory extends BasicTilesContainerFactory 
         return optionsRenderer;
     }
 
-
     @Override
     protected AttributeEvaluatorFactory createAttributeEvaluatorFactory(ApplicationContext applicationContext, LocaleResolver resolver) {
         return super.createAttributeEvaluatorFactory(applicationContext, resolver);
@@ -42,6 +42,6 @@ public final class FinnTilesContainerFactory extends BasicTilesContainerFactory 
 
     @Override
     protected UnresolvingLocaleDefinitionsFactory instantiateDefinitionsFactory(ApplicationContext applicationContext, LocaleResolver resolver) {
-        return new FinnUnresolvingLocaleDefinitionsFactoryImpl();
+        return new TilesUnresolvingDefinitionsFactoryImpl();
     }
 }
