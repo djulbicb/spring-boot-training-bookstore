@@ -1,9 +1,11 @@
-package com.training.bookstore.context.localeResolver;
+package com.training.bookstore;
 
-import org.apache.tomcat.jni.Local;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.i18n.AbstractLocaleResolver;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,11 @@ public class SubDomainLocaleResolver extends AbstractLocaleResolver {
     @Override
     public Locale resolveLocale(HttpServletRequest request) {
         String domain = request.getServerName();
+
+        if (!domain.contains(".")) {
+            return Locale.ENGLISH;
+        }
+
         String language = domain.substring(0, domain.indexOf('.'));
         Locale  locale = StringUtils.parseLocaleString(language);
         if (locale == null) {

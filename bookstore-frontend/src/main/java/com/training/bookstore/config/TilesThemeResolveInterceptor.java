@@ -1,4 +1,4 @@
-package com.training.bookstore.config.tiles;
+package com.training.bookstore.config;
 
 import com.training.bookstore.context.SiteSpec;
 import com.training.bookstore.model.resources.Theme;

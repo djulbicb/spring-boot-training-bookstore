@@ -5,7 +5,6 @@ import com.google.gson.reflect.TypeToken;
 import com.training.bookstore.BackendClient;
 import com.training.bookstore.client.StorageFilesClient;
 import com.training.bookstore.context.SiteSpec;
-import com.training.bookstore.context.localeResolver.SubDomainLocaleResolver;
 import com.training.bookstore.controller.model.CaruselFrontend;
 import com.training.bookstore.controller.model.CaruselFrontendSimple;
 import com.training.bookstore.model.Book;
@@ -40,8 +39,7 @@ FrontendController {
 //
 //    @Autowired
 //    StorageMinioClient minioClient;
-    @Autowired
-    SubDomainLocaleResolver resolver;
+
 
     @Autowired
     HttpServletRequest request;

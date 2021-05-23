@@ -1,4 +1,5 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <tiles:importAttribute  name="theme"/>
 
@@ -16,6 +17,8 @@
   </head>
   <body>
 
+<spring:message code="label.updateservice"/>
+${ttt}
     <div class="container">
         <h1>Hello, world!</h1>
         <tiles:insertAttribute name="header"/>
