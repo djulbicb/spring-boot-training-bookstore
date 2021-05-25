@@ -1,4 +1,4 @@
-package com.training.bookstore.context;
+package com.training.bookstore.config.context.spec;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

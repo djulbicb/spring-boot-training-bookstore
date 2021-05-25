@@ -20,6 +20,7 @@
     <definition name="REGEXP:([^/.][^.]*)\.([^.]+)" template="views/default/defaultLayout.jsp">
         <put-attribute name="theme"  value="{2}"/>
         <put-attribute name="meta" value="/views/themes/{options[theme]}/meta.jsp"/>
+        <put-attribute name="nav" value="/views/themes/{options[theme]}/nav.jsp"/>
         <put-attribute name="header" value="/views/themes/{options[theme]}/head.jsp"/>
         <put-attribute name="body" value="/views/themes/{options[theme]}/body.jsp"/>
         <put-attribute name="footer" value="/views/themes/{options[theme]}/footer.jsp"/>

@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.training.bookstore.BackendClient;
 import com.training.bookstore.client.StorageFilesClient;
-import com.training.bookstore.context.SiteSpec;
+import com.training.bookstore.config.context.spec.SiteSpec;
 import com.training.bookstore.controller.model.CaruselFrontend;
 import com.training.bookstore.controller.model.CaruselFrontendSimple;
 import com.training.bookstore.model.Book;

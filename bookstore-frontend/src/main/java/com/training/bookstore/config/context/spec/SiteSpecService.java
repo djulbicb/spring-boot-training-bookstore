@@ -1,4 +1,4 @@
-package com.training.bookstore.context;
+package com.training.bookstore.config.context.spec;
 
 import com.training.bookstore.sites.SiteConfig;
 import com.training.bookstore.sites.SiteConfigConsumer;

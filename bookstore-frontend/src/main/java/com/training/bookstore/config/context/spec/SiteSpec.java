@@ -1,4 +1,4 @@
-package com.training.bookstore.context;
+package com.training.bookstore.config.context.spec;
 
 import com.training.bookstore.model.resources.Lang;
 import com.training.bookstore.model.resources.Theme;

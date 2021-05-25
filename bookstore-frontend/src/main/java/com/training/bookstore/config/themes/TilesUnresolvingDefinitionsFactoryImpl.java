@@ -1,4 +1,4 @@
-package com.training.bookstore.config;
+package com.training.bookstore.config.themes;
 
 import org.apache.tiles.Attribute;
 import org.apache.tiles.Definition;

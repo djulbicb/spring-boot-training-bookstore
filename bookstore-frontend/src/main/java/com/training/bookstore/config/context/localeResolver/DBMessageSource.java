@@ -1,9 +1,7 @@
-package com.training.bookstore.context.localeResolver;
+package com.training.bookstore.config.context.localeResolver;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractMessageSource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
 import java.util.Locale;
