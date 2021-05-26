@@ -1,6 +1,6 @@
-package com.training.bookstore.model.resources;
+package com.training.bookstore.model.site;
 
-public class Shop {
+public class SiteInfo {
     private Lang lang;
     private Theme theme;
 

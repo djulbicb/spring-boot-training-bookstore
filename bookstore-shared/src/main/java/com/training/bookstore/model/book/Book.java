@@ -1,4 +1,4 @@
-package com.training.bookstore.model;
+package com.training.bookstore.model.book;
 
 
 import data.DataLibrary;

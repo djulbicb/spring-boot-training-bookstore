@@ -1,7 +1,7 @@
 package com.training.bookstore.convertor;
 
 import com.training.bookstore.model.BookEntity;
-import com.training.bookstore.model.Book;
+import com.training.bookstore.model.book.Book;
 
 public class BookConvertor {
 

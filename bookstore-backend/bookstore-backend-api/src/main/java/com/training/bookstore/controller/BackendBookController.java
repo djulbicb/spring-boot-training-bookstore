@@ -1,6 +1,6 @@
 package com.training.bookstore.controller;
 
-import com.training.bookstore.model.Book;
+import com.training.bookstore.model.book.Book;
 import com.training.bookstore.service.BookService;
 import data.DataLibrary;
 import org.springframework.beans.factory.annotation.Autowired;

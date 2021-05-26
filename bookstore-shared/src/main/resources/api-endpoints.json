@@ -27,7 +27,7 @@
     "location" : "http://${url}:${port}/${api}"
   },
   {
-    "api" : "api/files/",
+    "api" : "api/files",
     "regex" : "[\\/]*api\\/files\\/.*",
     "name" : "files",
     "method" : "GET",

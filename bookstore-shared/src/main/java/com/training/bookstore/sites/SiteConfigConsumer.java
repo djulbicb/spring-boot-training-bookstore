@@ -8,13 +8,14 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 @Component
-public class SiteConfigConsumer extends JsonToClassResourceReader<List<SiteConfig>> {
+public class SiteConfigConsumer {
 
     private final List<SiteConfig> configs;
 
-    public SiteConfigConsumer() {
-        Type type = new TypeToken<List<SiteConfig>>() {}.getType();
-        this.configs = readConfig(type);
+    public SiteConfigConsumer(List<SiteConfig> configs) {
+        this.configs = configs;
+//        Type type = new TypeToken<List<SiteConfig>>() {}.getType();
+//        this.configs = readConfig(type);
     }
 
     public SiteConfig getByServerName(String serverName) {
@@ -36,10 +37,5 @@ public class SiteConfigConsumer extends JsonToClassResourceReader<List<SiteConfi
             }
         }
         throw new IllegalArgumentException("Cant find site with that site code " + siteCode);
-    }
-
-    @Override
-    public String getResourceFilePath() {
-        return "site-config.json";
     }
 }

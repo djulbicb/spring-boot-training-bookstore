@@ -2,7 +2,7 @@ package com.training.bookstore.controller.model;
 
 import java.util.List;
 
-public class CaruselFrontend {
+public class HomePageConfig {
     private String title;
     private String subtitle;
     private List<CaruselFrontendItem> items;

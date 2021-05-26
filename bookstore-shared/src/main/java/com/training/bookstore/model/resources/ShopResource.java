@@ -1,8 +1,10 @@
 package com.training.bookstore.model.resources;
 
+import com.training.bookstore.model.site.SiteInfo;
+
 public class ShopResource {
     private Resource resource;
-    private Shop shop;
+    private SiteInfo siteInfo;
 
     public Resource getResource() {
         return resource;
@@ -12,11 +14,11 @@ public class ShopResource {
         this.resource = resource;
     }
 
-    public Shop getShop() {
-        return shop;
+    public SiteInfo getShop() {
+        return siteInfo;
     }
 
-    public void setShop(Shop shop) {
-        this.shop = shop;
+    public void setShop(SiteInfo siteInfo) {
+        this.siteInfo = siteInfo;
     }
 }

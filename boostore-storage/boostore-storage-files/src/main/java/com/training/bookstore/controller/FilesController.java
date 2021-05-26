@@ -1,15 +1,14 @@
 package com.training.bookstore.controller;
 
 
-import com.google.gson.Gson;
 import com.training.bookstore.io.StorageFilesReader;
 import com.training.bookstore.io.StorageFilesWriter;
+import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ShopResource;
+import com.training.bookstore.service.ResourceService;
+import com.training.bookstore.sites.SiteConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -22,7 +21,17 @@ public class FilesController {
     @Autowired
     StorageFilesWriter filesWriter;
     @Autowired
-    Gson gson;
+    ResourceService resourceService;
+
+    @GetMapping("resources")
+    public Resource[] readResourceDefinitions() throws IOException {
+        return resourceService.getAllResources();
+    }
+
+    @GetMapping("sites")
+    public SiteConfig[] readSitesDefinitions() throws IOException {
+        return resourceService.getSitesResource();
+    }
 
 
     @RequestMapping("/write")

@@ -1,11 +1,15 @@
 package com.training.bookstore.service;
 
+import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ShopResource;
+import com.training.bookstore.model.site.SiteInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 
 @Service
 public class FilesPathResolver {
@@ -17,11 +21,16 @@ public class FilesPathResolver {
         this.rootPath = rootPath;
     }
 
-    public String resolve (ShopResource resource) {
-        String filePath = String.format("%s/%s/%s/%s", rootPath, resource.getResource().getType(), resource.getShop().getShopCode(), resource.getResource().getCategory(), resource.getResource().getName());
+    public String resolve (ShopResource shopResource) throws IOException {
+        SiteInfo meta = shopResource.getShop();
+        Resource resource = shopResource.getResource();
+
+        String filePath = Paths.get(rootPath, resource.getType().name().toLowerCase(), resource.getCategory(), resource.getStoragePath()).toString();
+
         File file = new File(filePath);
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
+            file.createNewFile();
         }
         return filePath;
     }
@@ -33,5 +42,9 @@ public class FilesPathResolver {
             file.getParentFile().mkdirs();
         }
         return filePath;
+    }
+
+    public String resolve(Resource resource) {
+        return Paths.get(rootPath, resource.getType().name().toLowerCase(), resource.getCategory(), resource.getFileName()).toString();
     }
 }

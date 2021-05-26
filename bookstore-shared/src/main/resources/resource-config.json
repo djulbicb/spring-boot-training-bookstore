@@ -1,9 +1,0 @@
-[
-  {
-    "name" : "i18n-messages",
-    "type" : "SHOP",
-    "storagePath" : "enbl",
-    "minioPath" : [".*enbl\\..*"]
-  }
-]
-

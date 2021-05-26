@@ -1,6 +1,6 @@
 package com.training.bookstore.controller;
 
-import com.training.bookstore.model.Book;
+import com.training.bookstore.model.book.Book;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,7 @@
 package com.training.bookstore.sites;
 
-import com.training.bookstore.model.resources.Lang;
-import com.training.bookstore.model.resources.Theme;
+import com.training.bookstore.model.site.Lang;
+import com.training.bookstore.model.site.Theme;
 
 import java.util.List;
 

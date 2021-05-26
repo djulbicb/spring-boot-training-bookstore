@@ -1,0 +1,43 @@
+[
+  {
+    "name" : "config-resource",
+    "fileName" : "config-resource.json",
+    "type" : "GLOBAL",
+    "category" : "sites",
+    "storagePath" : "/sites/config-resources.json",
+    "cloudPath" : "/sites/config-resources.json"
+  },
+  {
+    "name" : "config-sites",
+    "fileName" : "config-sites.json",
+    "type" : "GLOBAL",
+    "category" : "sites",
+    "storagePath" : "/sites/config-sites.json",
+    "cloudPath" : "/sites/.json"
+  },
+  {
+    "name" : "i18n-messages",
+    "fileName" : "i18n-messages.json",
+    "type" : "SHOPS_CASCADE",
+    "category" : "i18n",
+    "storagePath" : "/i18n/i18n-messages.json",
+    "cloudPath" : "/i18n/i18n-messages.json"
+  },
+  {
+    "name" : "home-page",
+    "fileName" : "home-page.json",
+    "type" : "SHOPS_SITE",
+    "category" : "page",
+    "storagePath" : "/page/home-page.json",
+    "cloudPath" : "/page/home-page.json"
+  },
+  {
+    "name" : "seo-controller-urls",
+    "fileName" : "seo-controller-urls.json",
+    "type" : "SHOPS_SITE",
+    "category" : "seo",
+    "storagePath" : "/seo/seo-controller-urls.json",
+    "cloudPath" : "/page/seo-controller-urls.json"
+  }
+]
+

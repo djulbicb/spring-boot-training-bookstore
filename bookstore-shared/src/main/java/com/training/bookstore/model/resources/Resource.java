@@ -2,12 +2,23 @@ package com.training.bookstore.model.resources;
 
 public class Resource {
     public enum Type {
-        GLOBAL, SHOP
+        GLOBAL, SHOPS_CASCADE, SHOPS_SITE
     }
 
     private String name;
-    private String category;
+    private String fileName;
     private Type type;
+    private String category;
+    private String storagePath;
+    private String cloudPath;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public String getName() {
         return name;
@@ -15,6 +26,14 @@ public class Resource {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public String getCategory() {
@@ -25,11 +44,31 @@ public class Resource {
         this.category = category;
     }
 
-    public Type getType() {
-        return type;
+    public String getStoragePath() {
+        return storagePath;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setStoragePath(String storagePath) {
+        this.storagePath = storagePath;
+    }
+
+    public String getCloudPath() {
+        return cloudPath;
+    }
+
+    public void setCloudPath(String cloudPath) {
+        this.cloudPath = cloudPath;
+    }
+
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "name='" + name + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", type=" + type +
+                ", category='" + category + '\'' +
+                ", storagePath='" + storagePath + '\'' +
+                ", cloudPath='" + cloudPath + '\'' +
+                '}';
     }
 }

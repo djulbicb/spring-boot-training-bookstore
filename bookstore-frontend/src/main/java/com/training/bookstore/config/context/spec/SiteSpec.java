@@ -1,37 +1,39 @@
 package com.training.bookstore.config.context.spec;
 
-import com.training.bookstore.model.resources.Lang;
-import com.training.bookstore.model.resources.Theme;
-
-import javax.servlet.http.HttpServletRequest;
+import com.training.bookstore.model.site.Lang;
+import com.training.bookstore.model.site.SiteInfo;
+import com.training.bookstore.model.site.Theme;
 
 public class SiteSpec {
-    private Theme theme;
-    private Lang lang;
-
-    public SiteSpec(HttpServletRequest request) {
-        String serverName = request.getServerName();
-        System.out.println("SiteSpec REQUEST SCOPE " + serverName);
-    }
+    private SiteInfo siteInfo;
 
     public SiteSpec(Theme theme, Lang lang) {
-        this.theme = theme;
-        this.lang = lang;
+        this.siteInfo = new SiteInfo();
+        siteInfo.setLang(lang);
+        siteInfo.setTheme(theme);
+    }
+
+    public SiteInfo getSiteInfo() {
+        return siteInfo;
+    }
+
+    public void setSiteInfo(SiteInfo siteInfo) {
+        this.siteInfo = siteInfo;
     }
 
     public Theme getTheme() {
-        return theme;
+        return siteInfo.getTheme();
     }
 
     public Lang getLang() {
-        return lang;
+        return siteInfo.getLang();
     }
 
     @Override
     public String toString() {
         return "SiteSpec{" +
-                "theme=" + theme +
-                ", lang=" + lang +
+                "theme=" + getTheme() +
+                ", lang=" + getLang() +
                 '}';
     }
 }

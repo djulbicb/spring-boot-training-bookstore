@@ -1,7 +1,7 @@
 package com.training.bookstore.config.themes;
 
 import com.training.bookstore.config.context.spec.SiteSpec;
-import com.training.bookstore.model.resources.Theme;
+import com.training.bookstore.model.site.Theme;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

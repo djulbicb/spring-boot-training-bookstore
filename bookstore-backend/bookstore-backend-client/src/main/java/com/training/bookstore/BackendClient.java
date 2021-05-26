@@ -1,7 +1,7 @@
 package com.training.bookstore;
 
 import com.training.bookstore.api.ApiEndpointConsumer;
-import com.training.bookstore.model.Book;
+import com.training.bookstore.model.book.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

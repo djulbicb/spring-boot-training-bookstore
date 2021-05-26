@@ -1,7 +1,7 @@
 package com.training.bookstore.service;
 
 import com.training.bookstore.convertor.BookConvertor;
-import com.training.bookstore.model.Book;
+import com.training.bookstore.model.book.Book;
 import com.training.bookstore.model.BookEntity;
 import com.training.bookstore.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
