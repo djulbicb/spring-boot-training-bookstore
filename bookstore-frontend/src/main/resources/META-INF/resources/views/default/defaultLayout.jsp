@@ -12,6 +12,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/css/default.css" rel="stylesheet"/>
     <link href="/static/css/${theme}.css" rel="stylesheet"/>
 
 
@@ -24,7 +25,7 @@
 
     <spring:message code="label.updateservice"/>
 
-    <div class="container">
+    <div class="">
         <tiles:insertAttribute name="nav"/>
         <tiles:insertAttribute name="header"/>
         <tiles:insertAttribute name="body"/>

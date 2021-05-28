@@ -17,7 +17,7 @@
         <put-attribute name="footer" value="/views/default/defaultFooter.jsp" />
     </definition>
 
-    <definition name="REGEXP:sss\.([^.]+)" template="views/default/defaultLayout.jsp">
+    <definition name="REGEXP:basic\.([^.]+)" template="views/default/defaultLayout.jsp">
         <put-attribute name="theme"  value="{1}"/>
         <put-attribute name="meta" value="/views/themes/{options[theme]}/meta.jsp"/>
         <put-attribute name="nav" value="/views/themes/{options[theme]}/nav.jsp"/>
@@ -29,6 +29,24 @@
             <add-attribute value="{1}"/>
             <add-attribute value="default"/>
         </put-list-attribute>
+    </definition>
+
+    <definition name="REGEXP:home\.([^.]+)" template="views/default/defaultLayout.jsp">
+        <put-attribute name="theme"  value="{1}"/>
+        <put-attribute name="meta" value="/views/themes/{options[theme]}/meta.jsp"/>
+        <put-attribute name="nav" value="/views/themes/{options[theme]}/nav.jsp"/>
+        <put-attribute name="header" value="/views/themes/{options[theme]}/head.jsp"/>
+        <put-attribute name="body" value="/views/themes/{options[theme]}/home.jsp"/>
+        <put-attribute name="footer" value="/views/themes/{options[theme]}/footer.jsp"/>
+
+        <put-list-attribute name="theme" cascade="true">
+            <add-attribute value="{1}"/>
+            <add-attribute value="default"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="REGEXP:product\.([^.]+)" extends="basic.{1}">
+        <put-attribute name="body" value="/views/themes/{options[theme]}/product.jsp"/>
     </definition>
 
     <definition name="REGEXP:main\.([^.]+)" template="views/default/defaultLayout.jsp">

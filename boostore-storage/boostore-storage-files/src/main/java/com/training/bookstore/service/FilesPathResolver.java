@@ -3,6 +3,7 @@ package com.training.bookstore.service;
 import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ShopResource;
 import com.training.bookstore.model.site.SiteInfo;
+import com.training.bookstore.sites.SiteConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,35 @@ public class FilesPathResolver {
     }
 
     public String resolve(Resource resource) {
+        String subFolder = "";
+        if (!resource.getType().equals(Resource.Type.GLOBAL)) {
+            throw new IllegalArgumentException("Not expecting this type of resource");
+        }
         return Paths.get(rootPath, resource.getType().name().toLowerCase(), resource.getCategory(), resource.getFileName()).toString();
+    }
+
+    public String resolve(Resource resource, SiteConfig shop) throws IOException {
+        String subFolder = "";
+        switch (resource.getType()) {
+            case GLOBAL:
+                throw new IllegalArgumentException("Not expecting this type of resource");
+            case SHOPS_CASCADE_COUNTRY:
+                subFolder = "cascade_country";
+                break;
+            case SHOPS_CASCADE_THEME:
+                subFolder = "cascade_theme";
+                break;
+            case SHOPS_SITE:
+                subFolder = "sites";
+                break;
+        }
+        String path = Paths.get(rootPath, "shops", subFolder, shop.getCode(), resource.getCategory(), resource.getFileName()).toString();
+        File file = new File(path);
+
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+            file.createNewFile();
+        }
+        return path;
     }
 }

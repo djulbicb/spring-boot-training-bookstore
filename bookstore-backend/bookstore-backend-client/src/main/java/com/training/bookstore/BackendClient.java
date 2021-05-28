@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -32,9 +33,7 @@ public class BackendClient {
                 restTemplate.exchange(apiEndpoint + "book",
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {
                         });
-
-       return responseEntity.getBody();
-
+        return responseEntity.getBody();
     }
 
     public Book findBookById(long bookId) {

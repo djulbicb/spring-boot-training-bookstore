@@ -1,9 +1,27 @@
-package com.training.bookstore.controller.model;
+package com.training.bookstore.model.resources.impl.home;
 
 public class CaruselFrontendItem {
+    private String imageUrl;
     private String url;
     private String title;
+    private String description;
     private boolean active;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getUrl() {
         return url;

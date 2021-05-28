@@ -1,11 +1,11 @@
-package com.training.bookstore.controller.model;
+package com.training.bookstore.model.resources.impl.home;
 
 import java.util.List;
 
 public class HomePageConfig {
     private String title;
     private String subtitle;
-    private List<CaruselFrontendItem> items;
+    private List<CaruselFrontendItem> caruselSlides;
 
     public String getTitle() {
         return title;
@@ -23,12 +23,12 @@ public class HomePageConfig {
         this.subtitle = subtitle;
     }
 
-    public List<CaruselFrontendItem> getItems() {
-        return items;
+    public List<CaruselFrontendItem> getCaruselSlides() {
+        return caruselSlides;
     }
 
-    public void setItems(List<CaruselFrontendItem> items) {
-        this.items = items;
+    public void setCaruselSlides(List<CaruselFrontendItem> caruselSlides) {
+        this.caruselSlides = caruselSlides;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class HomePageConfig {
         return "CaruselFrontend{" +
                 "title='" + title + '\'' +
                 ", subtitle='" + subtitle + '\'' +
-                ", items=" + items +
+                ", items=" + caruselSlides +
                 '}';
     }
 }

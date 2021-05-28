@@ -5,7 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.training.bookstore.BackendClient;
 import com.training.bookstore.client.StorageFilesClient;
 import com.training.bookstore.config.context.spec.SiteSpec;
-import com.training.bookstore.controller.model.HomePageConfig;
+import com.training.bookstore.model.resources.impl.home.HomePageConfig;
 import com.training.bookstore.model.book.Book;
 import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ResourceNames;
@@ -51,12 +51,21 @@ FrontendController {
         return new ModelAndView("main"); // main.blue
     }
 
+    @GetMapping("/product")
+    public ModelAndView showProduct (SiteSpec siteSpec, Model model) {
+        model.addAttribute("siteSpec", siteSpec);
+
+        return new ModelAndView("product");
+    }
+
+
     @GetMapping("")
     public ModelAndView getIndex(SiteSpec siteSpec, Model model) throws IOException {
         List<Book> all = backendClient.findAll();
         model.addAttribute("siteSpec", siteSpec);
 
-        filesClient.getResourceForShop(ResourceNames.HOME_PAGE, siteSpec.getSiteInfo(), HomePageConfig.class);
+        HomePageConfig carusel = filesClient.getResourceByNameAndShop(ResourceNames.HOME_PAGE, siteSpec.getSiteInfo().getShopCode(), HomePageConfig.class);
+        model.addAttribute("carusel", carusel);
 
 //        String read = filesClient.read("carousel/front-page.txt");
 //        CaruselFrontend carusel = getPropertiesConfigUsingProperties(read);
@@ -76,8 +85,8 @@ FrontendController {
 //
 //        model.addAttribute("caruselConfig", carusel);
 //        model.addAttribute("bojan", "Model bojan");
-//        model.addAttribute("books", all);
-        return  new ModelAndView("sss");
+        model.addAttribute("books", all);
+        return  new ModelAndView("home");
     }
 
     private <T> T getPropertiesFullConfigUsingJsonGeneric(String jsonContent, Class<T> klass) {

@@ -29,6 +29,11 @@ public class ResourceService {
         return gson.fromJson(configContent, type.getType());
     }
 
+    public String getShopResource(Resource resource, SiteConfig shop) throws IOException {
+        String resourcePath = filesPathResolver.resolve(resource, shop);
+        return FileRead.readString(resourcePath);
+    }
+
     public <T> T getShopResource (ShopResource shopResource, Class<T> klass) throws IOException {
         String resourcePath = filesPathResolver.resolve(shopResource);
         String configContent = FileRead.readString(resourcePath);
@@ -75,4 +80,6 @@ public class ResourceService {
         Resource resource = getResourceByName(ResourceNames.CONFIG_SITES);
         return getGlobalResource(resource, SiteConfig[].class);
     }
+
+
 }

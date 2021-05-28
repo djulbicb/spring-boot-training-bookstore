@@ -6,6 +6,7 @@ import com.training.bookstore.io.StorageFilesWriter;
 import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ShopResource;
 import com.training.bookstore.service.ResourceService;
+import com.training.bookstore.service.SiteService;
 import com.training.bookstore.sites.SiteConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +23,21 @@ public class FilesController {
     StorageFilesWriter filesWriter;
     @Autowired
     ResourceService resourceService;
+    @Autowired
+    SiteService siteService;
 
     @GetMapping("resources")
     public Resource[] readResourceDefinitions() throws IOException {
         return resourceService.getAllResources();
+    }
+
+    @GetMapping("resource")
+    public String readResource(
+            @RequestParam("resourceName") String resourceName,
+            @RequestParam("shopCode") String shopCode) throws IOException {
+        Resource resource = resourceService.getResourceByName(resourceName);
+        SiteConfig shop = siteService.getByShopCode(shopCode);
+        return resourceService.getShopResource(resource, shop);
     }
 
     @GetMapping("sites")

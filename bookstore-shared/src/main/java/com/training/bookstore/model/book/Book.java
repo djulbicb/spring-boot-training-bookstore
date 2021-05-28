@@ -1,6 +1,7 @@
 package com.training.bookstore.model.book;
 
 
+import com.training.bookstore.utils.Lorem;
 import data.DataLibrary;
 
 import javax.validation.constraints.NotEmpty;
@@ -25,6 +26,15 @@ public class Book {
         book.setTitle(data.getSentenceBound(4));
         book.setDescription(data.getParagraph());
         book.setImage(data.getImgUrl(400,300));
+        return book;
+    }
+
+    public static Book notFound() {
+        Book book = new Book();
+        book.setWriter("Inactive");
+        book.setTitle("Database not active");
+        book.setDescription(Lorem.loremDiv() + Lorem.loremDiv() + Lorem.loremDiv());
+        book.setImage("https://via.placeholder.com/468x60?text=Database+Inactive");
         return book;
     }
 

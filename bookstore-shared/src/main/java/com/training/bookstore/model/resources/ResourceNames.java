@@ -6,5 +6,5 @@ public class ResourceNames {
     public static String CONFIG_SITES = "config-sites";
 
     // SHOP - SITE
-    public static final Object HOME_PAGE = "home-page";
+    public static final String HOME_PAGE = "home-page";
 }

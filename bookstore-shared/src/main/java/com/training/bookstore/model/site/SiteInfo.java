@@ -3,6 +3,7 @@ package com.training.bookstore.model.site;
 public class SiteInfo {
     private Lang lang;
     private Theme theme;
+    private String shopCode;
 
     public Lang getLang() {
         return lang;
@@ -21,6 +22,10 @@ public class SiteInfo {
     }
 
     public String getShopCode () {
-        return String.format("%s%s", theme.name(), lang.name()).toLowerCase();
+        return shopCode;
+    }
+
+    public void setShopCode(String shopCode) {
+        this.shopCode = shopCode;
     }
 }

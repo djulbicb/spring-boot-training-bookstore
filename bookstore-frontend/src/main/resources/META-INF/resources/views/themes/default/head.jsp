@@ -1,1 +1,3 @@
-: DEFAULT head :
+<div class="container">
+	HEAD
+</div>

@@ -24,6 +24,7 @@ public class SiteSpecService {
     public SiteSpec create(HttpServletRequest request) {
         SiteConfigConsumer consumer = new SiteConfigConsumer(Arrays.asList(client.getSiteConfigs()));
         SiteConfig config = consumer.getByServerName(request.getServerName());
-        return new SiteSpec(config.getTheme(), config.getLang());
+
+        return new SiteSpec(config);
     }
 }

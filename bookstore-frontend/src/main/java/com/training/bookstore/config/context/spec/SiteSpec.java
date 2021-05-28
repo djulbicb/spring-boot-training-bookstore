@@ -3,14 +3,16 @@ package com.training.bookstore.config.context.spec;
 import com.training.bookstore.model.site.Lang;
 import com.training.bookstore.model.site.SiteInfo;
 import com.training.bookstore.model.site.Theme;
+import com.training.bookstore.sites.SiteConfig;
 
 public class SiteSpec {
     private SiteInfo siteInfo;
 
-    public SiteSpec(Theme theme, Lang lang) {
+    public SiteSpec(SiteConfig config) {
         this.siteInfo = new SiteInfo();
-        siteInfo.setLang(lang);
-        siteInfo.setTheme(theme);
+        siteInfo.setLang(config.getLang());
+        siteInfo.setTheme(config.getTheme());
+        siteInfo.setShopCode(config.getCode());
     }
 
     public SiteInfo getSiteInfo() {

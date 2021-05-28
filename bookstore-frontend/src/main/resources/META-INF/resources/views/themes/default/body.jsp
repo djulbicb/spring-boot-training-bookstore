@@ -1,1 +1,3 @@
-: DEFAULT body :
+  <div class="container">
+  		: DEFAULT body :
+  </div>

@@ -1,13 +1,8 @@
 package com.training.bookstore.sites;
 
-import com.djulb.resource.JsonToClassResourceReader;
-import com.google.gson.reflect.TypeToken;
-import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Type;
+import java.util.Arrays;
 import java.util.List;
 
-@Component
 public class SiteConfigConsumer {
 
     private final List<SiteConfig> configs;
@@ -16,6 +11,10 @@ public class SiteConfigConsumer {
         this.configs = configs;
 //        Type type = new TypeToken<List<SiteConfig>>() {}.getType();
 //        this.configs = readConfig(type);
+    }
+
+    public SiteConfigConsumer(SiteConfig[] sitesResource) {
+        this.configs = Arrays.asList(sitesResource);
     }
 
     public SiteConfig getByServerName(String serverName) {
@@ -27,10 +26,10 @@ public class SiteConfigConsumer {
             }
 
         }
-        return getByName("enbl");
+        return getByShopCode("enbl");
     }
 
-    private SiteConfig getByName(String siteCode) {
+    public SiteConfig getByShopCode(String siteCode) {
         for (SiteConfig config : configs) {
             if (config.getCode().equals(siteCode)) {
                 return config;
@@ -38,4 +37,5 @@ public class SiteConfigConsumer {
         }
         throw new IllegalArgumentException("Cant find site with that site code " + siteCode);
     }
+
 }

@@ -1,19 +1,21 @@
 package com.training.bookstore.client;
 
-import com.sun.javafx.fxml.builder.URLBuilder;
-import com.sun.xml.internal.bind.v2.schemagen.episode.Klass;
+import com.djulb.io.FileRead;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
 import com.training.bookstore.api.ApiEndpointConsumer;
 import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ShopResource;
 import com.training.bookstore.model.site.SiteInfo;
 import com.training.bookstore.sites.SiteConfig;
-import com.training.bookstore.sites.SiteConfigConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.nio.file.Paths;
+import java.io.IOException;
+import java.lang.reflect.Type;
 
 @Component
 public class StorageFilesClient {
@@ -23,6 +25,9 @@ public class StorageFilesClient {
 
     @Autowired
     RestTemplate rest;
+
+    @Autowired
+    Gson gson;
 
     public String write (String filePath, String content) {
         String url = configuration.getFiles().getLocation() + "write";
@@ -62,7 +67,16 @@ public class StorageFilesClient {
         return rest.getForObject(url, SiteConfig[].class);
     }
 
-    public void getResourceForShop(Object homePage, SiteInfo siteInfo, Class klass) {
+    public <T> T getResourceByNameAndShop(String resourceName, String shopCode, Class<T> klass) {
+        String url = UriComponentsBuilder.fromHttpUrl(configuration.getFiles().getLocation())
+                .pathSegment("resource")
+                .queryParam("resourceName", resourceName)
+                .queryParam("shopCode", shopCode)
+                .build().toUriString();
 
+        TypeToken<T> token = TypeToken.get(klass);
+        String configContent = rest.getForObject(url, String.class);
+        return gson.fromJson(configContent, token.getType());
     }
+
 }

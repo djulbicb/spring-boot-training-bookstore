@@ -2,7 +2,7 @@ package com.training.bookstore.model.resources;
 
 public class Resource {
     public enum Type {
-        GLOBAL, SHOPS_CASCADE, SHOPS_SITE
+        GLOBAL, SHOPS_CASCADE_COUNTRY, SHOPS_CASCADE_THEME, SHOPS_SITE
     }
 
     private String name;

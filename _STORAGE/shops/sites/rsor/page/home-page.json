@@ -1,0 +1,14 @@
+{
+  "title" : "This is title",
+  "subtitle" : "This is subtitle",
+  "background" : "/background.jpg",
+  "caruselSlides" : [
+    {
+      "url" : "url1",
+      "imageUrl" : "/url1",
+      "title" : "title",
+      "active" : true,
+      "description" : "Some description"
+    }
+  ]
+}
