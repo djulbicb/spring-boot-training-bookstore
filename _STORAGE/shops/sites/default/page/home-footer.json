@@ -1,0 +1,55 @@
+{
+  "columns" : [
+    {
+      "title" : "Footer 1",
+      "links" : [
+        {
+          "label" : "Link title 1",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 2",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 3",
+          "url" : "/url"
+        }
+      ]
+    },
+    {
+      "title" : "Footer 2",
+      "links" : [
+        {
+          "label" : "Link title 1",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 2",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 3",
+          "url" : "/url"
+        }
+      ]
+    },
+    {
+      "title" : "Footer 3",
+      "links" : [
+        {
+          "label" : "Link title 1",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 2",
+          "url" : "/url"
+        },
+        {
+          "label" : "Link title 3",
+          "url" : "/url"
+        }
+      ]
+    }
+  ]
+}

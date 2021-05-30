@@ -5,6 +5,8 @@ import com.training.bookstore.utils.Lorem;
 import data.DataLibrary;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Book {
@@ -36,6 +38,14 @@ public class Book {
         book.setDescription(Lorem.loremDiv() + Lorem.loremDiv() + Lorem.loremDiv());
         book.setImage("https://via.placeholder.com/468x60?text=Database+Inactive");
         return book;
+    }
+
+    public static List<Book> notFound(int count) {
+        List<Book> books = new ArrayList<>();
+        for (int j = 0; j < count; j++) {
+            books.add(Book.notFound());
+        }
+        return books;
     }
 
     public String getImage() {

@@ -26,7 +26,7 @@ public class SiteConfigConsumer {
             }
 
         }
-        return getByShopCode("enbl");
+        return getByShopCode("default");
     }
 
     public SiteConfig getByShopCode(String siteCode) {

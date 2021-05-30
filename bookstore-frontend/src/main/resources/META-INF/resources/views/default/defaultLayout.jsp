@@ -1,5 +1,6 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <tiles:importAttribute  name="theme"/>
 
@@ -12,7 +13,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="/static/css/default.css" rel="stylesheet"/>
+    <link href="/static/css/_all_themes.css" rel="stylesheet"/>
     <link href="/static/css/${theme}.css" rel="stylesheet"/>
 
 
@@ -23,7 +24,7 @@
   <body>
 
 
-    <spring:message code="label.updateservice"/>
+
 
     <div class="">
         <tiles:insertAttribute name="nav"/>

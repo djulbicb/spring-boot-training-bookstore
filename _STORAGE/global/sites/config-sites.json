@@ -1,6 +1,12 @@
 [
   {
     "lang" : "EN",
+    "theme" : "DEFAULT",
+    "code" : "default",
+    "domains" : [".*default\\..*"]
+  },
+  {
+    "lang" : "EN",
     "theme" : "BLUE",
     "code" : "enbl",
     "domains" : [".*enbl\\..*"]

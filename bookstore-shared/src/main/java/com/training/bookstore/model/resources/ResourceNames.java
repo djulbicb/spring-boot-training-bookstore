@@ -7,4 +7,6 @@ public class ResourceNames {
 
     // SHOP - SITE
     public static final String HOME_PAGE = "home-page";
+    public static final String HOME_FOOTER = "home-footer";
+
 }

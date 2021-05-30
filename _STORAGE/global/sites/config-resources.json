@@ -32,6 +32,14 @@
     "cloudPath" : "/page/home-page.json"
   },
   {
+    "name" : "home-footer",
+    "fileName" : "home-footer.json",
+    "type" : "SHOPS_SITE",
+    "category" : "page",
+    "storagePath" : "/page/home-footer.json",
+    "cloudPath" : "/page/home-footer.json"
+  },
+  {
     "name" : "seo-controller-urls",
     "fileName" : "seo-controller-urls.json",
     "type" : "SHOPS_SITE",

@@ -9,6 +9,7 @@ import com.training.bookstore.model.resources.impl.home.HomePageConfig;
 import com.training.bookstore.model.book.Book;
 import com.training.bookstore.model.resources.Resource;
 import com.training.bookstore.model.resources.ResourceNames;
+import com.training.bookstore.model.resources.impl.home.HomePageFooterConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,31 +62,13 @@ FrontendController {
 
     @GetMapping("")
     public ModelAndView getIndex(SiteSpec siteSpec, Model model) throws IOException {
-        List<Book> all = backendClient.findAll();
-        model.addAttribute("siteSpec", siteSpec);
-
         HomePageConfig carusel = filesClient.getResourceByNameAndShop(ResourceNames.HOME_PAGE, siteSpec.getSiteInfo().getShopCode(), HomePageConfig.class);
+        HomePageFooterConfig footer = filesClient.getResourceByNameAndShop(ResourceNames.HOME_FOOTER, siteSpec.getSiteInfo().getShopCode(), HomePageFooterConfig.class);
+
+        model.addAttribute("siteSpec", siteSpec);
         model.addAttribute("carusel", carusel);
-
-//        String read = filesClient.read("carousel/front-page.txt");
-//        CaruselFrontend carusel = getPropertiesConfigUsingProperties(read);
-
-//        String read = filesClient.read("carousel/front-page.json");
-//        CaruselFrontendSimple carusel = getPropertiesConfigUsingJson(read);
-
-//        String read = filesClient.read("carousel/front-page-full.json");
-//        CaruselFrontend carusel = getPropertiesFullConfigUsingJson(read);
-
-//        String read = filesClient.read("carousel/front-page-full.json");
-//        HomePageResource carusel = getPropertiesFullConfigUsingJsonGeneric(read, HomePageResource.class);
-//
-//
-//
-//        System.out.println(read);
-//
-//        model.addAttribute("caruselConfig", carusel);
-//        model.addAttribute("bojan", "Model bojan");
-        model.addAttribute("books", all);
+        model.addAttribute("footer", footer);
+        model.addAttribute("books", backendClient.findAll());
         return  new ModelAndView("home");
     }
 

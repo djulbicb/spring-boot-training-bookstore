@@ -29,11 +29,15 @@ public class BackendClient {
     }
 
     public List<Book> findAll() {
-        ResponseEntity<List<Book>> responseEntity =
-                restTemplate.exchange(apiEndpoint + "book",
-                        HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {
-                        });
-        return responseEntity.getBody();
+        try {
+            ResponseEntity<List<Book>> responseEntity =
+                    restTemplate.exchange(apiEndpoint + "book",
+                            HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {
+                            });
+            return responseEntity.getBody();
+        } catch (Exception e) {
+            return Book.notFound(8);
+        }
     }
 
     public Book findBookById(long bookId) {

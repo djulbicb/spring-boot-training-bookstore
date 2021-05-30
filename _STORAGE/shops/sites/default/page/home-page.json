@@ -1,0 +1,28 @@
+{
+  "title" : "This is title",
+  "subtitle" : "This is subtitle",
+  "background" : "/background.jpg",
+  "caruselSlides" : [
+    {
+      "url" : "url1",
+      "imageUrl" : "/static/image/bilboard/bilboard-1.jpg",
+      "title" : "title",
+      "active" : true,
+      "description" : "Some description"
+    },
+    {
+      "url" : "url1",
+      "imageUrl" : "/static/image/bilboard/bilboard-2.jpg",
+      "title" : "title",
+      "active" : false,
+      "description" : "Some description"
+    },
+    {
+      "url" : "url1",
+      "imageUrl" : "/static/image/bilboard/bilboard-3.jpg",
+      "title" : "title",
+      "active" : false,
+      "description" : "Some description"
+    }
+  ]
+}

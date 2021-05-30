@@ -1,5 +1,5 @@
 * {
-
+    box-sizing: border-box;
 }
 
 h1 {
@@ -10,4 +10,55 @@ img {
     width: 100%;
 }
 
+footer {
 
+}
+
+.container {
+    max-width: 1540px;
+}
+
+.block {
+    position: relative;
+    width: 24%;
+    background-color: lightgrey;
+    padding-top: 10px;
+    margin-bottom: 3.5em;
+}
+.text-center {
+    text-align: center !important;
+}
+
+.image {
+    width: 180px;
+    height: 300px;
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    position: absolute;
+    width: 94%;
+    top: 280px;
+    left: 3%;
+    background-color: #fff;
+}
+
+.cart {
+    background-color: #26A69A;
+    color: #fff;
+    padding: 6px;
+    width: 48%;
+    margin-right: 2%;
+    border: 2px solid #26A69A;
+    cursor: pointer;
+}
+
+.order {
+    color: #26A69A;
+    padding: 6px 5px;
+    width: 48%;
+    margin-left: 2%;
+    border: 2px solid #26A69A;
+    cursor: pointer;
+}
